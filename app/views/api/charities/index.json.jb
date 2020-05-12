@@ -1,1 +1,17 @@
-@charities  
+@charities.map do |charity|
+  {
+    id:charity.id,
+    charityName:charity.charityName,
+    url:charity.url,
+    donationUrl: charity.donationUrl,
+    state:charity.state,
+    city:charity.city,
+    zipCode:charity.zipCode,
+    score:charity.score,
+    acceptingDonations:charity.acceptingDonations,
+    category:charity.category,
+    deductibilityCd:charity.deductibilityCd,
+    missionStatement:charity.missionStatement
+}
+end
+
