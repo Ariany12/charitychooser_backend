@@ -1,0 +1,10 @@
+@chosenones.map do |chosen|
+  {
+    id:chosen.id,
+    user_id:chosen.user_id,
+    charity_id: chosen.charity_id,
+    # charity_name: chosen.charity_id.charityName
+    donated_amount: chosen.donated_amount
+}
+end
+

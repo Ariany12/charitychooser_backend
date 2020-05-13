@@ -1,2 +1,3 @@
 class ChosenOne < ApplicationRecord
+
 end
