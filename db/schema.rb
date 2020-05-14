@@ -10,24 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_29_222616) do
+ActiveRecord::Schema.define(version: 2020_05_14_020620) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "charities", force: :cascade do |t|
-    t.string "charityName"
+    t.string "charity_name"
     t.string "url"
-    t.string "donationUrl"
+    t.string "donation_url"
     t.string "city"
     t.string "state"
-    t.integer "zipCode"
+    t.integer "zip_code"
     t.integer "score"
-    t.string "acceptingDonations"
+    t.string "accepting_donations"
     t.string "category"
-    t.string "eligibleCd"
-    t.string "deductibilityCd"
-    t.string "missionStatement"
+    t.string "deductibility"
+    t.string "mission_statement"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

@@ -3,10 +3,10 @@ response = HTTP.get("http://data.orghunter.com/v1/charitysearch?user_key=#{Rails
 
 
 response.parse["data"].each do |charity|
-  if charity["acceptingDonations"] == 1 
+  if charity["accepting_donations"] == 1 
 
-    Charity.create!(charityName: charity["charityName"], url: charity["url"], donationUrl: charity["donationUrl"], state: charity["state"], city: charity["city"],
-    zipCode: charity["zipCode"], score: charity["score"], category: charity["category"],deductibilityCd: charity["deductibilityCd"], missionStatement: charity["missionStatement"]) 
+    Charity.create!(charity_name: charity["charityName"], url: charity["url"], donation_url: charity["donationUrl"], state: charity["state"], city: charity["city"],
+    zip_code: charity["zipCode"], score: charity["score"], category: charity["category"],deductibility: charity["deductibilityCd"], mission_statement: charity["missionStatement"]) 
   
   end
 end
