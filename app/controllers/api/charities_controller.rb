@@ -1,17 +1,10 @@
 class Api::CharitiesController < ApplicationController
-  def index
-     charity_name = params[:name]
-     state = params[:state]
-     city = params[:city]
-     score = params[:score]
-     deductibility = params[:ded]
+  def index 
+   
     
-
     if current_user
-      # @charities = Charity.where("charity_name LIKE ?", "%#{charity_name}%" AND "city LIKE ?", "%#{state}%")
-      @charities = Charity.where("charity_name LIKE ? AND city LIKE ?", "%#{charity_name}%","%#{state}%")
-         
-        #OR  state LIKE ? OR zip_code LIKE ? OR score LIKE ? OR category LIKE ? OR deductibility", "%"
+     
+      @charities = Charity.where('LOWER(state) LIKE ?', ("%#{params[:state]}%").downcase).where('LOWER(city) LIKE ?', ("%#{params[:city]}%").downcase).where('LOWER(charity_name) LIKE ?', ("%#{params[:name]}%").downcase).where("score LIKE ?", "%#{params[:score]}%").where("zip_code LIKE ?", "%#{params[:zip]}%").where("deductibility LIKE ?", "%#{params[:deductibility]}%")
     else
       @charities = []
     end
@@ -28,6 +21,8 @@ class Api::CharitiesController < ApplicationController
   end
 end
 
+
+# @charities = Charity.where('LOWER(name) LIKE ?', ("%#{name}%").downcase).where('LOWER(state) LIKE ?', ("%#{state}%").downcase).where('LOWER(city) LIKE ?', ("%#{city}%").downcase).where('LOWER(state) LIKE ?', ("%#{state}%").downcase)
 
 
   
