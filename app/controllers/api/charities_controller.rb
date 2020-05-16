@@ -22,7 +22,4 @@ class Api::CharitiesController < ApplicationController
 end
 
 
-# @charities = Charity.where('LOWER(name) LIKE ?', ("%#{name}%").downcase).where('LOWER(state) LIKE ?', ("%#{state}%").downcase).where('LOWER(city) LIKE ?', ("%#{city}%").downcase).where('LOWER(state) LIKE ?', ("%#{state}%").downcase)
-
-
   

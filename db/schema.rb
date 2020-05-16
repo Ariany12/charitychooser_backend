@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_14_235947) do
+ActiveRecord::Schema.define(version: 2020_05_16_021453) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -33,7 +33,7 @@ ActiveRecord::Schema.define(version: 2020_05_14_235947) do
 
   create_table "chosen_ones", force: :cascade do |t|
     t.integer "user_id"
-    t.integer "charity_id"
+    t.string "charity_name"
     t.integer "donated_amount"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
