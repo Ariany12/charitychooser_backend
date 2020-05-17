@@ -2,6 +2,7 @@
   {
     id:chosen.id,
     charity_name: chosen.charity_name,
+    state: chosen.state,
     user_name:chosen.user_name,
     donated_amount: chosen.donated_amount
 }

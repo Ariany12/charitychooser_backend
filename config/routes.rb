@@ -6,6 +6,7 @@ Rails.application.routes.draw do
     get "/charities" => "charities#index"
     get "/charities/:id" => "charities#show"
     get "/chosenones" => "chosenones#index"
+    post "/chosenones" => "chosenones#create"
 
 
     post "/users" => "users#create"
