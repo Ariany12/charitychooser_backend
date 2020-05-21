@@ -7,10 +7,10 @@ class Api::ChosenonesController < ApplicationController
 
   def create
     @chosenones = ChosenOne.new(
-      charity_name: params[:charity_name],
+      charity_name: params[:name],
       state: params[:state],
       user_name: params[:user_name],
-      donated_amount: params[:danated_amount]
+      donated_amount: params[:donated_amount]
     )
     if @chosenones.save
       render json: {message: "you create a new product in your db"}
